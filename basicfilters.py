@@ -32,9 +32,6 @@ gauss = cv2.GaussianBlur(img, (3,3), -1)
 # 3x3 filter
 med = cv2.medianBlur(img, 3)
 
-print ("To save an image with a filter, input the number from beside the\n" 
-       "title after into the terminal after exiting the plot window.\n"
-       "Otherwise just hit RETURN.")
 # Plot the 4 images.
 pyplot.subplot(221)
 pyplot.imshow(img)
@@ -55,10 +52,16 @@ pyplot.title('3:Median Filter')
 
 pyplot.show()
 
+print('To save an image with a filter, input the number from beside the\n' 
+       'title after into the terminal after exiting the plot window.\n'
+       'Otherwise just hit RETURN.')
+
+print('Your options are:\n1: Averaging Filter\n2: Guassian Blur Filter\n3:Median Filter')
+
 # read in input. If it is anything other than 1,2 or 3, then simply exit.
 # otherwise save the image associated with that number.
 res = raw_input();
-if res == "":
+if res == '':
     print('Not saving anything')
 elif int(res) == 1:
     cv2.imwrite('avgfiltimg.png', avg)
